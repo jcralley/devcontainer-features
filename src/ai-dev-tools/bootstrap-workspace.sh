@@ -15,10 +15,11 @@ cp -r "${ZSKILLS_SRC}/hooks/." "${WORKSPACE}/.claude/hooks/"
 mkdir -p "${WORKSPACE}/scripts"
 cp -r "${ZSKILLS_SRC}/scripts/." "${WORKSPACE}/scripts/"
 
+cp "${ZSKILLS_SRC}/zskills-config.schema.json" "${WORKSPACE}/.claude/zskills-config.schema.json"
+
 if [ ! -f "${WORKSPACE}/.claude/zskills-config.json" ]; then
   echo "📝 No zskills-config.json found — copying default config..."
   cp "${ZSKILLS_SRC}/zskills-config.json" "${WORKSPACE}/.claude/zskills-config.json"
-  cp "${ZSKILLS_SRC}/zskills-config.schema.json" "${WORKSPACE}/.claude/zskills-config.schema.json"
 fi
 
 echo "✅ zskills bootstrapped."
