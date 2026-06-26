@@ -1,0 +1,14 @@
+{
+  "id": "ai-dev-tools",
+  "version": "1.0.0",
+  "name": "AI Dev Tools",
+  "description": "Installs Claude Code CLI, Gemini CLI, OpenAI Codex, Playwright/Chromium, and Powerlevel10k zsh theme",
+  "documentationURL": "https://github.com/jcralley/devcontainer-features",
+  "options": {
+    "installPlaywright": {
+      "type": "boolean",
+      "default": true,
+      "description": "Install Playwright and Chromium (headless)"
+    }
+  }
+}
