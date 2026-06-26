@@ -50,4 +50,14 @@ if ! grep -q 'p10k.zsh' "${REMOTE_USER_HOME}/.zshrc" 2>/dev/null; then
   echo '[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh' >> "${REMOTE_USER_HOME}/.zshrc"
 fi
 
+# Install zskills bundle to a known location
+echo "🛠️  Installing zskills bundle..."
+ZSKILLS_DEST="/usr/local/share/ai-dev-tools/zskills"
+mkdir -p "${ZSKILLS_DEST}"
+cp -r "$(dirname "$0")/zskills/." "${ZSKILLS_DEST}/"
+
+# Install the workspace bootstrap script
+install -m 0755 "$(dirname "$0")/bootstrap-workspace.sh" \
+  /usr/local/bin/ai-dev-tools-bootstrap-workspace
+
 echo "✅ AI dev tools installed."
